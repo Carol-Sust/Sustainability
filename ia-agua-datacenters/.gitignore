@@ -1,0 +1,18 @@
+# Data (rebuilt by the notebooks, too large for Git)
+data/
+
+# Climate files
+*.nc
+*.grib
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+
+# Mac
+.DS_Store
+
+# Secrets
+.env

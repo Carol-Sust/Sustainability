@@ -1,0 +1,33 @@
+# Project configuration: "AI and water: data centres in water-stressed basins"
+# All project decisions live here; every notebook reads this file.
+
+scope:
+  # EU-27 + United Kingdom, Norway and Switzerland (ISO 3166-1 alpha-2 codes)
+  countries: [AT, BE, BG, HR, CY, CZ, DK, EE, FI, FR, DE, GR, HU, IE, IT,
+              LV, LT, LU, MT, NL, PL, PT, RO, SK, SI, ES, SE, GB, NO, CH]
+  # Bounding box around Europe, in degrees
+  bbox: {north: 72, south: 34, west: -25, east: 45}
+
+crs:
+  geographic: EPSG:4326   # lat/lon, used for the spatial join
+  equal_area: EPSG:3035   # metres, used for areas and distances in Europe
+
+osm:
+  campus_distance_m: 200       # buildings closer than this = same campus
+  request_pause_s: 5           # pause between Overpass API requests
+
+aqueduct:
+  scenarios: [opt, bau, pes]   # optimistic, business as usual, pessimistic
+  years: [30, 50]              # 2030 and 2050
+
+era5:
+  baseline_period: [1991, 2020]
+  recent_period: [2021, 2025]
+  heat_threshold_c: 30         # days with max temperature above this count as "hot days"
+
+risk_index:
+  weights:
+    current_stress: 0.3
+    summer_peak: 0.2
+    stress_2050: 0.3
+    heat: 0.2
