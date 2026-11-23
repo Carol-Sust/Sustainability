@@ -17,6 +17,7 @@ crs:
 osm:
   campus_distance_m: 200       # buildings closer than this = same campus
   request_pause_s: 5           # pause between Overpass API requests
+  min_area_m2: 100             # smaller polygons are cabinets/telecom rooms, not data centres
 
 aqueduct:
   scenarios: [opt, bau, pes]   # optimistic, business as usual, pessimistic
