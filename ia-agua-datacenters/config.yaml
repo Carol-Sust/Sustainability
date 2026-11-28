@@ -34,3 +34,6 @@ risk_index:
     summer_peak: 0.2
     stress_2050: 0.3
     heat: 0.2
+    
+join:
+  max_nearest_km: 5            # coastal sites outside every basin get the nearest one within this distance
